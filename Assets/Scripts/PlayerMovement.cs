@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
     private Rigidbody2D rb;//short for rigidbody
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
@@ -15,9 +16,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]private float moveSpeed = 7f;
     [SerializeField]private float jumpForce = 14f;
 
-    private enum MovementState { idle, running, jumping, falling }
+    private enum MovementState { idle, running, jumping, falling, dead }
 
-    [SerializeField] private AudioSource jumpSoundEffect;
+    
 
     // Start is called before the first frame update
     private void Start()
@@ -38,14 +39,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump")&& IsGrounded() )
         {
-            jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x,jumpForce);
+            
         }
 
-        UpdateAnimationUpdate();
+        UpdateAnimationState();
     }
 
-    private void UpdateAnimationUpdate()
+    private void UpdateAnimationState()
     {
 
         MovementState state;
@@ -67,11 +68,11 @@ public class PlayerMovement : MonoBehaviour
             state=MovementState.idle;
         }
 
-        if(rb.velocity.y>.01f)
+        if(rb.velocity.y>.001f)
         {
             state = MovementState.jumping;
         }
-        else if(rb.velocity.y<-.01f)
+        else if(rb.velocity.y<-.001f)
         {
             state = MovementState.falling;
         }
