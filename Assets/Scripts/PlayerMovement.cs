@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
-
+    //public AudioSource audioPlayer;//Adding Sound Effect Part1, Not Working Later
+    
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
@@ -82,4 +83,17 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
+
+    /*
+    //Adding Sound Effect Part2
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Num1")
+        {
+            audioPlayer.Play();
+        }
+    }
+    //Part2 ends here
+    */
+
 }
