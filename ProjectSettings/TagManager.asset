@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Cherry
   - Trap
+  - Num1
+  - Num2
+  - Num3
   layers:
   - Default
   - TransparentFX

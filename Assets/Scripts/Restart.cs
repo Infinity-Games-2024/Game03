@@ -8,7 +8,8 @@ public class Restart : MonoBehaviour
     // Start is called before the first frame update
     public void ReStartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 3);
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex-4);
     }
 
 }

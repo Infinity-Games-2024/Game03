@@ -13,7 +13,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Infinity Edutainment
+<<<<<<< Updated upstream
   productName: Ninja's Adventure
+=======
+  productName: 'Cat''s Adventure of Numeria '
+>>>>>>> Stashed changes
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -283,7 +287,11 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
+<<<<<<< Updated upstream
       m_Icon: {fileID: 2800000, guid: 5c8b2ada1a819a54e8c051165c738f18, type: 3}
+=======
+      m_Icon: {fileID: 2800000, guid: e43852a498860be40aa03094ed6e18bf, type: 3}
+>>>>>>> Stashed changes
       m_Width: 128
       m_Height: 128
       m_Kind: 0
