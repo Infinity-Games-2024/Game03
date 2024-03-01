@@ -8,8 +8,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Transform player;
 
     // Update is called once per frame
-    private void Update()
+    private void LateUpdate()
     {
-        transform.position = new Vector3(player.position.x+3,player.position.y,transform.position.z);
+        transform.position = new Vector3(player.position.x+5.5f,player.position.y,transform.position.z);
     }
 }

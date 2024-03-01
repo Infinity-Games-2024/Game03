@@ -89,7 +89,7 @@ InputManager:
     m_Name: Jump
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: s
+    negativeButton: up
     positiveButton: w
     altNegativeButton: 
     altPositiveButton: space
