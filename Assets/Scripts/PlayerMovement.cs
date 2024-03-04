@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    string m_DeviceType;
     private Rigidbody2D rb;//short for rigidbody
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
@@ -27,21 +28,56 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-    }
+       
+}
 
     // Update is called once per frame
     void Update()
     {
 
-        dirX = Input.GetAxisRaw("Horizontal");
+        
 
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        //Output the device type to the console window
+        //Debug.Log("Device type : " + m_DeviceType);
 
-        if (Input.GetButtonDown("Jump")&& IsGrounded())
+        //Check if the device running this is a console
+        /*
+        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Console)
         {
-            jumpSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            //Change the text of the label
+            m_DeviceType = "Console";
         }
+        */
+        //Check if the device running this is a desktop
+        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Desktop)
+        {
+            m_DeviceType = "Desktop";
+            dirX = Input.GetAxisRaw("Horizontal");
+
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+
+            if (Input.GetButtonDown("Jump") && IsGrounded())
+            {
+                jumpSoundEffect.Play();
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
+        }
+
+        //Check if the device running this is a handheld
+        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            m_DeviceType = "Handheld";
+            Debug.Log("Hello") ;
+        }
+
+        /*
+        //Check if the device running this is unknown
+        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Unknown)
+        {
+            m_DeviceType = "Unknown";
+        }
+        //print(m_DeviceType);
+        */
 
         UpdateAnimationUpdate();
     }
