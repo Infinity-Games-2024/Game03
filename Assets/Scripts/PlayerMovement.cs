@@ -34,9 +34,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
-
         //Output the device type to the console window
         //Debug.Log("Device type : " + m_DeviceType);
 
@@ -51,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         //Check if the device running this is a desktop
         if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Desktop)
         {
+            print("Hey");
             m_DeviceType = "Desktop";
             dirX = Input.GetAxisRaw("Horizontal");
 
@@ -61,13 +59,17 @@ public class PlayerMovement : MonoBehaviour
                 jumpSoundEffect.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
+
+            UpdateAnimationUpdate();
         }
 
         //Check if the device running this is a handheld
         if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Handheld)
         {
             m_DeviceType = "Handheld";
-            Debug.Log("Hello") ;
+            //Debug.Log("Hello") ;
+
+            UpdateAndriod();
         }
 
         /*
@@ -79,12 +81,26 @@ public class PlayerMovement : MonoBehaviour
         //print(m_DeviceType);
         */
 
-        UpdateAnimationUpdate();
+       
+    }
+
+    //try to update on Andriod
+    private void UpdateAndriod()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch=Input.GetTouch(0);
+            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
+            touchPosition.z = 0f;
+            transform.position = touchPosition;
+           
+        }
     }
 
     private void UpdateAnimationUpdate()
     {
-
+        //print("Hello");
+        //Debug.Log("Hello");
         MovementState state;
         if (dirX > 0f)
         {
