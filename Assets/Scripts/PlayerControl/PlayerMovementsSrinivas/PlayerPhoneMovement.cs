@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPhoneMovement : MonoBehaviour
 {
     public Joystick joystick;//Brackevs Srinivas, adding Joystick
+    public Button buttonJump;
+    public bool isButtonPressed;
     string m_DeviceType;
     private Rigidbody2D rb;//short for rigidbody
     private BoxCollider2D coll;
@@ -16,8 +19,8 @@ public class PlayerPhoneMovement : MonoBehaviour
 
     private float dirX = 0f;
     private float dirY = 0f;
-    [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpForce = 14f;
+    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float jumpForce = 17f;
 
     private enum MovementState { idle, running, jumping, falling, death }
 
@@ -31,6 +34,20 @@ public class PlayerPhoneMovement : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
 
+        buttonJump.onClick.AddListener(ButtonPressed);
+    }
+
+    private void ButtonPressed()//Gemini
+    {
+        isButtonPressed = true;
+
+        //Gemini: isButtonPressed after a short time(optional)
+        StartCoroutine(ResetJumpPressAfterTime(0.1f));
+    }
+    IEnumerator ResetJumpPressAfterTime(float time)//Gemini
+    {
+        yield return new WaitForSeconds(time);
+        isButtonPressed = false;
     }
 
     // Update is called once per frame
@@ -50,14 +67,15 @@ public class PlayerPhoneMovement : MonoBehaviour
             dirX = 0f;
         }
 
-        dirY = joystick.Vertical*moveSpeed;
+        //dirY = joystick.Vertical*moveSpeed;
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-        if ((Input.GetButtonDown("Jump") || dirY>0.6f)&& IsGrounded())
+        if ((Input.GetButtonDown("Jump") || isButtonPressed==true) && IsGrounded())
         {
             jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            //isButtonPressed = false;
         }
         AnimationUpdate();
     }
