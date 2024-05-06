@@ -13,7 +13,7 @@ public class WaypointFollower : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-       if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position)< .1f )
+       if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position)<.1f )
         {
             currentWaypointIndex++;
             if(currentWaypointIndex >= waypoints.Length)
@@ -21,6 +21,6 @@ public class WaypointFollower : MonoBehaviour
                 currentWaypointIndex = 0;
             }
         }
-        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, 1.35f*Time.deltaTime * speed);
     }
 }

@@ -105,11 +105,7 @@ namespace TMPro.Examples
 
                 }
                 else if (BenchmarkType == 1)
-
-                    m_textMesh.text = label02 + (i % 1000).ToString();
-
-                    m_textMesh.text = label02 + (i % 1000).ToString();
-
+                   // m_textMesh.TextMeshPro = label02 + (i % 1000).ToString();
 
                 yield return null;
             }

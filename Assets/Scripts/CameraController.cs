@@ -13,8 +13,8 @@ public class CameraController : MonoBehaviour
         SceneManager.LoadSceneAsync("MainMenu");
     }
     // Update is called once per frame
-    private void Update()
+    private void LateUpdate()
     {
-        transform.position = new Vector3(player.position.x+3,player.position.y,transform.position.z);
+        transform.position = new Vector3(player.position.x+2.7f,player.position.y+1.5f,transform.position.z);
     }
 }
