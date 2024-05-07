@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Cherry
   - Trap
+  - Num1
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - Ground
