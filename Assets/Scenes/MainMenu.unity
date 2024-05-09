@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 1314104524}
   - component: {fileID: 1314104523}
   m_Layer: 0
-  m_Name: IranBG
+  m_Name: JennyBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
