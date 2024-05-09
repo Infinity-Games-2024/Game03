@@ -465,23 +465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eadda395adb6b824cb33858562bcec46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &770606724 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4838362087476411138, guid: e057dc129c165934eb2a19676a4b9fad, type: 3}
-  m_PrefabInstance: {fileID: 998414202}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &770606729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 770606724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8ed0b11850145c4995dd76170bb2500, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &860725095
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,6 +788,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7445714958191066634, guid: e057dc129c165934eb2a19676a4b9fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1257569904}
+    - target: {fileID: 7445714958191066634, guid: e057dc129c165934eb2a19676a4b9fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: QuitGame
+      objectReference: {fileID: 0}
     - target: {fileID: 8067130343568998990, guid: e057dc129c165934eb2a19676a4b9fad, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -826,6 +817,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 998414205}
     - target: {fileID: 8985149984173327039, guid: e057dc129c165934eb2a19676a4b9fad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8985149984173327039, guid: e057dc129c165934eb2a19676a4b9fad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReStartGame
       objectReference: {fileID: 0}
@@ -844,9 +839,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8067130343568998990, guid: e057dc129c165934eb2a19676a4b9fad, type: 3}
       insertIndex: -1
       addedObject: {fileID: 998414205}
-    - targetCorrespondingSourceObject: {fileID: 4838362087476411138, guid: e057dc129c165934eb2a19676a4b9fad, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 770606729}
   m_SourcePrefab: {fileID: 100100000, guid: e057dc129c165934eb2a19676a4b9fad, type: 3}
 --- !u!1 &998414204 stripped
 GameObject:
@@ -876,6 +868,7 @@ GameObject:
   - component: {fileID: 1257569903}
   - component: {fileID: 1257569902}
   - component: {fileID: 1257569901}
+  - component: {fileID: 1257569904}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -957,6 +950,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1257569904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257569900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b1aa69c6861404a9208368a7a3855e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1531720611
 GameObject:
   m_ObjectHideFlags: 0
