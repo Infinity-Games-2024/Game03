@@ -7,6 +7,7 @@ public class NextSceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void OnEnable()
     {
-        SceneManager.LoadScene("Level 1",LoadSceneMode.Single);        
+        // SceneManager.LoadScene("Level 1",LoadSceneMode.Single);        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
     }
 }
