@@ -17,7 +17,7 @@ public class ItemCollector : MonoBehaviour
             collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             cherries++;
-            cherriesText.text = "Score: " + cherries; //previously Cheeries: 
+            cherriesText.text = "Punto: " + cherries; //previously Cheeries: 
         }
     }
 }
