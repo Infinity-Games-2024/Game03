@@ -55,11 +55,11 @@ public class PlayerPhoneMovement : MonoBehaviour
     {
 
         //dirX = joystick.Horizontal*moveSpeed;
-        if(joystick.Horizontal >= .4f)
+        if(joystick.Horizontal >= 0.18f)
         {
             dirX = joystick.Horizontal * moveSpeed;
         }
-        else if (joystick.Horizontal <= -.4f)
+        else if (joystick.Horizontal <= -0.18f)
         {
             dirX = joystick.Horizontal * moveSpeed;
         }else
