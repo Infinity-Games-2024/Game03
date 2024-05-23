@@ -54,34 +54,35 @@ public class PlayerPhoneMovement : MonoBehaviour
     {
 
         //dirX = joystick.Horizontal*moveSpeed;
-        if(joystick.Horizontal >= 0.18f)
+        if (joystick.Horizontal >= 0.18f)
         {
             dirX = joystick.Horizontal * moveSpeed;
         }
         else if (joystick.Horizontal <= -0.18f)
         {
             dirX = joystick.Horizontal * moveSpeed;
-        }else
+        }
+        else
         {
             dirX = 0f;
         }
 
-       
-          //dirY = joystick.Vertical * moveSpeed;
-        
-       
+
+        //dirY = joystick.Vertical * moveSpeed;
+
+
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
         //if ((Input.GetButtonDown("Jump") || isButtonPressed==true) && IsGrounded())//IsGrounded DoubleJump
-        if ((Input.GetButtonDown("Jump") || isButtonPressed==true))
+        if ((Input.GetButtonDown("Jump") || isButtonPressed == true))
         {
 
             jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             //isButtonPressed = false;
         }
-    
+
         AnimationUpdate();
     }
 
@@ -126,5 +127,4 @@ public class PlayerPhoneMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-
 }
