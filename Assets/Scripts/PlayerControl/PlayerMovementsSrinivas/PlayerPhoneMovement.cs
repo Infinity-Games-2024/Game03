@@ -74,8 +74,8 @@ public class PlayerPhoneMovement : MonoBehaviour
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-        //if ((Input.GetButtonDown("Jump") || isButtonPressed==true) && IsGrounded())//IsGrounded DoubleJump
-        if ((Input.GetButtonDown("Jump") || isButtonPressed == true))
+        if ((Input.GetButtonDown("Jump") || isButtonPressed==true) && IsGrounded())//IsGrounded DoubleJump
+        //if ((Input.GetButtonDown("Jump") || isButtonPressed == true))
         {
 
             jumpSoundEffect.Play();
@@ -103,7 +103,6 @@ public class PlayerPhoneMovement : MonoBehaviour
             state = MovementState.running;
             sprite.flipX = true;
         }
-
 
 
         else
