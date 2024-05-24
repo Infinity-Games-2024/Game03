@@ -7,72 +7,80 @@ using UnityEngine.UI;
 public class ItemCollector : MonoBehaviour
 {
     private int cherries = 0;
+    private List<string> collectibleTags = new List<string>() { "Num1", "Num2", "Num3", "Num4", "Num5", "Num6", "Num7", "Num8", "Num9", "Num10" };
+    private IEnumerator subtitleCoroutine; // Reference to the coroutine
 
     [SerializeField] private Text cherriesText;
-
-    [SerializeField] private Text levelText;//added
-
-    [SerializeField] private Text subtitleText;//added
-
+    [SerializeField] private Text levelText; //added
+    [SerializeField] private Text subtitleText; //added
     [SerializeField] private AudioSource collectionSoundEffect;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        bool numbers = collision.gameObject.CompareTag("Num1") || collision.gameObject.CompareTag("Num2") || collision.gameObject.CompareTag("Num3")|| collision.gameObject.CompareTag("Num4")||collision.gameObject.CompareTag("Num5")||collision.gameObject.CompareTag("Num6")||collision.gameObject.CompareTag("Num7")||collision.gameObject.CompareTag("Num8")||collision.gameObject.CompareTag("Num9")||collision.gameObject.CompareTag("Num10");
         levelText.text = "" + (SceneManager.GetActiveScene().buildIndex - 1) + "/8";
-        if (numbers) 
+
+        if (collectibleTags.Contains(collision.gameObject.tag))
         {
             collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             cherries++;
-            cherriesText.text = "Punto: " + cherries+"/20"; //10 changes, previously Cheeries: 
+            cherriesText.text = "Punto: " + cherries; // Updated text format
 
-            if (collision.gameObject.CompareTag("Num1"))
+            // Stop any running coroutine before starting a new one
+            if (subtitleCoroutine != null)
             {
+                StopCoroutine(subtitleCoroutine);
+            }
+            subtitleCoroutine = DisplaySubtitle(collision.gameObject.tag);
+            StartCoroutine(subtitleCoroutine);
+        }
+    }
+
+    IEnumerator DisplaySubtitle(string collectedNumber)
+    {
+        // Update subtitle text
+        switch (collectedNumber)
+        {
+            case "Num1":
                 subtitleText.text = "uno";
-            }
-            else if (collision.gameObject.CompareTag("Num2"))
-            {
+                break;
+            // ... other cases for subtitle translations
+            case "Num2":
                 subtitleText.text = "due";
-            }
-            else if (collision.gameObject.CompareTag("Num3"))
-            {
+                break;
+            case "Num3":
                 subtitleText.text = "tre";
-            }
-            else if (collision.gameObject.CompareTag("Num4"))
-            {
+                break;
+            case "Num4":
                 subtitleText.text = "quattro";
-            }
-            else if (collision.gameObject.CompareTag("Num5"))
-            {
+                break;
+            case "Num5":
                 subtitleText.text = "cinque";
-            }
-            else if (collision.gameObject.CompareTag("Num6"))
-            {
+                break;
+            case "Num6":
                 subtitleText.text = "sei";
-            }
-            else if (collision.gameObject.CompareTag("Num7"))
-            {
+                break;
+            case "Num7":
                 subtitleText.text = "sette";
-            }
-            else if (collision.gameObject.CompareTag("Num8"))
-            {
+                break;
+            case "Num8":
                 subtitleText.text = "otto";
-            }
-            else if (collision.gameObject.CompareTag("Num9"))
-            {
+                break;
+            case "Num9":
                 subtitleText.text = "nove";
-            }
-            else if (collision.gameObject.CompareTag("Num10"))
-            {
+                break;
+            case "Num10":
                 subtitleText.text = "dieci";
-            }
+                break;
+            default:
+                subtitleText.text = "";
+                break;
         }
 
-        
+        // Wait for 1 second
+        yield return new WaitForSeconds(1f);
+
+        // Clear subtitle text
+        subtitleText.text = "";
     }
-    /*public void Update()
-    {
-        levelText.text = "" + (SceneManager.GetActiveScene().buildIndex-1)+"/8";
-    } 
-    */
 }
