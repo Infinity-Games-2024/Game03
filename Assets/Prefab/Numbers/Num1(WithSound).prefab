@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9211509042570417758}
   m_Layer: 0
   m_Name: Num1(WithSound)
-  m_TagString: Cherry
+  m_TagString: Num1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,4 +165,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7567f698784f08a4bacb6de4ffa28913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Num1SoundEffect: {fileID: 0}
+  NumSoundEffect: {fileID: 0}
