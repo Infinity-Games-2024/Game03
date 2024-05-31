@@ -25,7 +25,7 @@ public class Finish : MonoBehaviour
             //subtitleText.text = "uno";//SubtitleB
             finishSound.Play();
             levelCompleted = true;
-            Invoke("CompleteLevel", 3f); // add 2s during level transition
+            Invoke("CompleteLevel", 3.8f); // add 2s during level transition
             //CompleteLevel();
         }
     }

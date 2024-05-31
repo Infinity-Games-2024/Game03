@@ -24,7 +24,7 @@ public class ItemCollector : MonoBehaviour
             collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             cherries++;
-            cherriesText.text = "Punto: " + cherries; // Updated text format
+            cherriesText.text = "điem:" + cherries; // Updated text format
 
             // Stop any running coroutine before starting a new one
             if (subtitleCoroutine != null)
@@ -42,35 +42,35 @@ public class ItemCollector : MonoBehaviour
         switch (collectedNumber)
         {
             case "Num1":
-                subtitleText.text = "uno";
+                subtitleText.text = "mot";
                 break;
             // ... other cases for subtitle translations
             case "Num2":
-                subtitleText.text = "due";
+                subtitleText.text = "hai";
                 break;
             case "Num3":
-                subtitleText.text = "tre";
+                subtitleText.text = "ba";
                 break;
             case "Num4":
-                subtitleText.text = "quattro";
+                subtitleText.text = "bon";
                 break;
             case "Num5":
-                subtitleText.text = "cinque";
+                subtitleText.text = "năm";
                 break;
             case "Num6":
-                subtitleText.text = "sei";
+                subtitleText.text = "sáu";
                 break;
             case "Num7":
-                subtitleText.text = "sette";
+                subtitleText.text = "bay";
                 break;
             case "Num8":
-                subtitleText.text = "otto";
+                subtitleText.text = "tám";
                 break;
             case "Num9":
-                subtitleText.text = "nove";
+                subtitleText.text = "chín";
                 break;
             case "Num10":
-                subtitleText.text = "dieci";
+                subtitleText.text = "muoi";
                 break;
             default:
                 subtitleText.text = "";
