@@ -452,7 +452,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "M\u1ED9t ch\xFA m\xE8o t\xEAn Whisker th\xEDch phi\xEAu l\u01B0u."
+  m_text: A cat named Whisker loved adventures.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -678,9 +678,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "B\xEAn kia l\xE0 V\u01B0\u01A1ng qu\u1ED1c Numberia. \u1EDE \u0111\xE2y,
-    Whisker ph\u1EA3i h\u1ECDc c\xE1c con s\u1ED1 \u0111\u1EC3 c\u1EE9u ng\u01B0\u1EDDi
-    d\xE2n c\u1EE7a m\xECnh. H\xE3y c\xF9ng gi\xFAp anh \u1EA5y!"
+  m_text: 'Beyond was a Numberia Kingdom. Here, Whisker must learn numbers to save
+    its citizens. Let''s help him together. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -774,7 +773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &659977746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -966,8 +965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tuy nhi\xEAn, c\xF3 \u0111i\u1EC1u g\xEC \u0111\xF3 b\xED \u1EA9n \u1EDF
-    n\u01A1i k\u1EF3 di\u1EC7u n\xE0y."
+  m_text: However, there was something mysterious about this enchanted place.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1158,8 +1156,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "M\u1ED9t ng\xE0y n\u1ECD, m\u1ED9t con b\u01B0\u1EDBm thu h\xFAt \nanh
-    ta v\xE0 anh ta l\u1EA1c v\xE0o m\u1ED9t khu r\u1EEBng."
+  m_text: One day, a butterfly attracted Whisker and he got lost in a forest.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1645,7 +1642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ng\xE0y x\u1EEDa ng\xE0y x\u01B0a, c\xF3 m\u1ED9t Vua m\xE8o."
+  m_text: 'Once upon a time, there was a cat Kingdom. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1974,8 +1971,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Whisker \u0111i theo con \u0111\u01B0\u1EDDng r\u1EF1c r\u1EE1 d\u1EABn
-    \u0111\u1EBFn ph\xEDa b\xEAn kia."
+  m_text: Whisker followed the light path that led to the other side.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

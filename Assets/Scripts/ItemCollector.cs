@@ -24,7 +24,7 @@ public class ItemCollector : MonoBehaviour
             collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             cherries++;
-            cherriesText.text = "điem:" + cherries; // Updated text format
+            cherriesText.text = "Score: " + cherries; // Updated text format
 
             // Stop any running coroutine before starting a new one
             if (subtitleCoroutine != null)
@@ -42,35 +42,35 @@ public class ItemCollector : MonoBehaviour
         switch (collectedNumber)
         {
             case "Num1":
-                subtitleText.text = "mot";
+                subtitleText.text = "one";
                 break;
             // ... other cases for subtitle translations
             case "Num2":
-                subtitleText.text = "hai";
+                subtitleText.text = "two";
                 break;
             case "Num3":
-                subtitleText.text = "ba";
+                subtitleText.text = "three";
                 break;
             case "Num4":
-                subtitleText.text = "bon";
+                subtitleText.text = "four";
                 break;
             case "Num5":
-                subtitleText.text = "năm";
+                subtitleText.text = "five";
                 break;
             case "Num6":
-                subtitleText.text = "sáu";
+                subtitleText.text = "six";
                 break;
             case "Num7":
-                subtitleText.text = "bay";
+                subtitleText.text = "seven";
                 break;
             case "Num8":
-                subtitleText.text = "tám";
+                subtitleText.text = "eight";
                 break;
             case "Num9":
-                subtitleText.text = "chín";
+                subtitleText.text = "nine";
                 break;
             case "Num10":
-                subtitleText.text = "muoi";
+                subtitleText.text = "ten";
                 break;
             default:
                 subtitleText.text = "";
