@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2144629325779267589}
   - component: {fileID: 1485066860082747118}
   m_Layer: 0
-  m_Name: Num2(WithoutSound)
+  m_Name: Num2(NoSound)
   m_TagString: Num2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
