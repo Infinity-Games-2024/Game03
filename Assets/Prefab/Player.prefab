@@ -173,7 +173,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6276939838272887303}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89e66ae8c1d7f754ba0071597fe971d5, type: 3}
   m_Name: 
@@ -187,6 +187,7 @@ MonoBehaviour:
   moveSpeed: 3
   jumpForce: 17
   jumpSoundEffect: {fileID: 4813028339253059122}
+  joystickThreshold: 0.18
 --- !u!114 &4724937500574358091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,17 +195,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6276939838272887303}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46be2dff2255e434baaa156c06c7de52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
+  buttonJump: {fileID: 0}
+  isButtonPressed: 0
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
   moveSpeed: 7
   jumpForce: 14
   jumpSoundEffect: {fileID: 4813028339253059122}
+  joystickThreshold: 0.18
 --- !u!95 &760997240717275933
 Animator:
   serializedVersion: 5
@@ -239,6 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cherriesText: {fileID: 0}
+  levelText: {fileID: 0}
+  subtitleText: {fileID: 0}
   collectionSoundEffect: {fileID: 5169614127986038576}
 --- !u!114 &9107357639042521295
 MonoBehaviour:

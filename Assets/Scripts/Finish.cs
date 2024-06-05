@@ -23,7 +23,7 @@ public class Finish : MonoBehaviour
         if(collision.gameObject.name=="Player" && !levelCompleted)
         {
             UnlockNewLevel();//added Unlock Level Map
-            //ResetPlayerPrefs();//Reset stored Data
+            //ResetPlayerPrefs();//Reset stored PlayerPrefs Level Data
             //subtitleText.text = "uno";//SubtitleB
             finishSound.Play();
             levelCompleted = true;
@@ -47,7 +47,7 @@ public class Finish : MonoBehaviour
         }
     }
 
-    void ResetPlayerPrefs()
+    void ResetPlayerPrefs()//reset level data, added in 05062024
     {
         PlayerPrefs.DeleteAll();
         Debug.Log("PlayerPrefs data reset!"); // Optional: Log a message to the console

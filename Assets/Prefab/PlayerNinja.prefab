@@ -180,7 +180,7 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
-  moveSpeed: 7
+  moveSpeed: 9
   jumpForce: 14
   jumpSoundEffect: {fileID: 3644311986774867203}
 --- !u!95 &951317654136681487
@@ -217,6 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cherriesText: {fileID: 0}
+  levelText: {fileID: 0}
+  subtitleText: {fileID: 0}
   collectionSoundEffect: {fileID: 3538396235727700058}
 --- !u!114 &8091262808633810221
 MonoBehaviour:
