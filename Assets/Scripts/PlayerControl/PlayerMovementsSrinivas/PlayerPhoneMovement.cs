@@ -35,12 +35,6 @@ public class PlayerPhoneMovement : MonoBehaviour
 
         buttonJump.onClick.AddListener(ButtonPressed);
 
-        // Detect device type
-        #if UNITY_EDITOR || UNITY_STANDALONE
-            m_DeviceType = "PC";
-        #else
-            m_DeviceType = "Mobile";
-        #endif
     }
 
     private void ButtonPressed()//Gemini

@@ -36,22 +36,30 @@ public class PlayerMovement : MonoBehaviour
         buttonJump.onClick.AddListener(ButtonPressed);
 
         // Detect device type
- // Detect device type
-        #if UNITY_EDITOR || UNITY_STANDALONE
-            m_DeviceType = "PC";
-        #elif UNITY_WEBGL
-            // Check for WebGL platform
-            if (SystemInfo.deviceType == DeviceType.Desktop)
-            {
-                m_DeviceType = "PC";
-            }
-            else
-            {
-                m_DeviceType = "Mobile";
-            }
-        #else
-            m_DeviceType = "Mobile";
-        #endif
+        // Detect device type
+        /*
+                #if UNITY_EDITOR || UNITY_STANDALONE
+                    m_DeviceType = "PC";
+                #elif UNITY_WEBGL
+                    // Check for WebGL platform
+                    if (SystemInfo.deviceType == DeviceType.Desktop)
+                    {
+                        m_DeviceType = "PC";
+                    }
+                    else
+                    {
+                        m_DeviceType = "Mobile";
+                    }
+                #else
+                    m_DeviceType = "Mobile";
+                #endif*/
+        // Use keyboard controls on WebGL (desktop)
+#if UNITY_WEBGL && !UNITY_EDITOR
+    m_DeviceType = "PC";
+#else
+        m_DeviceType = "Mobile";
+        // Use joystick and button controls on mobile or editor
+#endif
     }
 
     private void ButtonPressed()//Gemini
