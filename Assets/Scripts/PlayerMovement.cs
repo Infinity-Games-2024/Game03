@@ -1,3 +1,4 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -36,30 +37,24 @@ public class PlayerMovement : MonoBehaviour
         buttonJump.onClick.AddListener(ButtonPressed);
 
         // Detect device type
+
         // Detect device type
-        /*
-                #if UNITY_EDITOR || UNITY_STANDALONE
-                    m_DeviceType = "PC";
-                #elif UNITY_WEBGL
-                    // Check for WebGL platform
-                    if (SystemInfo.deviceType == DeviceType.Desktop)
-                    {
-                        m_DeviceType = "PC";
-                    }
-                    else
-                    {
-                        m_DeviceType = "Mobile";
-                    }
-                #else
-                    m_DeviceType = "Mobile";
-                #endif*/
-        // Use keyboard controls on WebGL (desktop)
-#if UNITY_WEBGL && !UNITY_EDITOR
-    m_DeviceType = "PC";
+#if UNITY_EDITOR || UNITY_STANDALONE
+        m_DeviceType = "PC";
+#elif UNITY_WEBGL
+            // Check for WebGL platform
+            if (SystemInfo.deviceType == DeviceType.Desktop)
+            {
+                m_DeviceType = "PC";
+            }
+            else if(SystemInfo.deveiceType==DeviceType.Handheld)
+            {
+                m_DeviceType = "Mobile";
+            }
 #else
-        m_DeviceType = "Mobile";
-        // Use joystick and button controls on mobile or editor
+            m_DeviceType = "Mobile";
 #endif
+
     }
 
     private void ButtonPressed()//Gemini
@@ -84,8 +79,10 @@ public class PlayerMovement : MonoBehaviour
         {
             dirX = joystick.Horizontal * moveSpeed;
         }*/
-        //dirY = joystick.Vertical * moveSpeed;
-        if (m_DeviceType == "PC")
+//dirY = joystick.Vertical * moveSpeed;
+
+/*
+if (m_DeviceType == "PC")
         {
             dirX = Input.GetAxis("Horizontal") * moveSpeed;
         }
@@ -93,14 +90,14 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Mathf.Abs(joystick.Horizontal) >= joystickThreshold)
             {
-                dirX = joystick.Horizontal * moveSpeed;
+                dirX = joystick.Horizontal * moveSpeed; // Line 60: Modified to use joystick input for Mobile
             }
             else
             {
                 dirX = 0f;
             }
         }
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(dirX, rb.velocity.y); // Line 65: Modified to apply movement
     }
 
     private void HandleJump()
@@ -164,3 +161,5 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
 }
+
+*/
