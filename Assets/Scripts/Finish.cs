@@ -24,10 +24,9 @@ public class Finish : MonoBehaviour
         {
             UnlockNewLevel();//added Unlock Level Map
             //ResetPlayerPrefs();//Reset stored PlayerPrefs Level Data
-            //subtitleText.text = "uno";//SubtitleB
             finishSound.Play();
             levelCompleted = true;
-            Invoke("CompleteLevel", 3.8f); // add 2s during level transition
+            Invoke("CompleteLevel", 3.5f); // add 3.5s during level transition
             //CompleteLevel();
         }
     }
@@ -47,6 +46,7 @@ public class Finish : MonoBehaviour
         }
     }
 
+    
     void ResetPlayerPrefs()//reset level data, added in 05062024
     {
         PlayerPrefs.DeleteAll();
