@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class PlayerPhoneMovement : MonoBehaviour
 {
-    public Joystick joystick;//Brackevs Srinivas, adding Joystick
-    public Button buttonJump;
-    public bool isButtonPressed;
+    public Joystick joystick;// Joystick for movement
+    public Button buttonJump;// Button for jumping
+    public bool isButtonPressed;// Flag to check if jump button is pressed
     private Rigidbody2D rb;//short for rigidbody
-    private BoxCollider2D coll;
-    private SpriteRenderer sprite;
-    private Animator anim;
+    private BoxCollider2D coll;// Rigidbody component for physics
+    private SpriteRenderer sprite;// Collider component for ground detection
+    private Animator anim;// Sprite renderer for flipping character
     //string m_DeviceType;
     //public AudioSource audioPlayer;//Adding Sound Effect Part1, Not Working Later
 
     [SerializeField] private LayerMask jumpableGround;
 
     private float dirX = 0f;
-    private float dirY = 0f;
+    //private float dirY = 0f;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float jumpForce = 17f;
     [SerializeField] private AudioSource jumpSoundEffect;
@@ -41,24 +41,26 @@ public class PlayerPhoneMovement : MonoBehaviour
         isButtonPressed = true;
 
         //Gemini: isButtonPressed after a short time(optional)
-        StartCoroutine(ResetJumpPressAfterTime(0.001f));
+        StartCoroutine(ResetJumpPressAfterTime(0.1f));
     }
     IEnumerator ResetJumpPressAfterTime(float time)//Gemini
     {
         yield return new WaitForSeconds(time);
         isButtonPressed = false;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void HandleMovement()
     {
-
         //dirX = joystick.Horizontal*moveSpeed;
-        if (joystick.Horizontal >= 0.18f)
+        /*if (joystick.Horizontal >= 0.18f)
         {
             dirX = joystick.Horizontal * moveSpeed;
         }
         else if (joystick.Horizontal <= -0.18f)
+        {
+            dirX = joystick.Horizontal * moveSpeed;
+        }*/
+        //dirY = joystick.Vertical * moveSpeed;
+        if (Mathf.Abs(joystick.Horizontal) >= 0.18f)
         {
             dirX = joystick.Horizontal * moveSpeed;
         }
@@ -66,11 +68,11 @@ public class PlayerPhoneMovement : MonoBehaviour
         {
             dirX = 0f;
         }
-
-        //dirY = joystick.Vertical * moveSpeed;
-
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+    }
 
+    private void HandleJump()
+    {
         if ((Input.GetButtonDown("Jump") || isButtonPressed == true) && IsGrounded())//IsGrounded DoubleJump
         //if ((Input.GetButtonDown("Jump") || isButtonPressed == true))
         {
@@ -79,7 +81,13 @@ public class PlayerPhoneMovement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             //isButtonPressed = false;
         }
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        HandleMovement();
+        HandleJump();
         AnimationUpdate();
     }
 
