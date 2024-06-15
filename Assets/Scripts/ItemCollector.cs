@@ -24,7 +24,7 @@ public class ItemCollector : MonoBehaviour
             collectionSoundEffect.Play();
             Destroy(collision.gameObject);
             cherries++;
-            cherriesText.text = "Punto: " + cherries; // Updated text format
+            cherriesText.text = "Score: " + cherries; // Updated text format
 
             // Stop any running coroutine before starting a new one
             if (subtitleCoroutine != null)
@@ -42,35 +42,35 @@ public class ItemCollector : MonoBehaviour
         switch (collectedNumber)
         {
             case "Num1":
-                subtitleText.text = "uno";
+                subtitleText.text = "one";
                 break;
             // ... other cases for subtitle translations
             case "Num2":
-                subtitleText.text = "due";
+                subtitleText.text = "two";
                 break;
             case "Num3":
-                subtitleText.text = "tre";
+                subtitleText.text = "three";
                 break;
             case "Num4":
-                subtitleText.text = "quattro";
+                subtitleText.text = "four";
                 break;
             case "Num5":
-                subtitleText.text = "cinque";
+                subtitleText.text = "five";
                 break;
             case "Num6":
-                subtitleText.text = "sei";
+                subtitleText.text = "six";
                 break;
             case "Num7":
-                subtitleText.text = "sette";
+                subtitleText.text = "seven";
                 break;
             case "Num8":
-                subtitleText.text = "otto";
+                subtitleText.text = "eight";
                 break;
             case "Num9":
-                subtitleText.text = "nove";
+                subtitleText.text = "nine";
                 break;
             case "Num10":
-                subtitleText.text = "dieci";
+                subtitleText.text = "ten";
                 break;
             default:
                 subtitleText.text = "";
