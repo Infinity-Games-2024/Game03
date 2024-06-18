@@ -42,7 +42,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""id"": ""a1818d7e-b80f-40fd-81ef-d8eebcdb4b03"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -62,6 +62,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""54633d43-9853-492d-acc5-d4fee3753a92"",
                     ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9fa60f9-073a-4124-a5ee-9e0013bfef28"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -141,7 +152,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""1D Axis AD"",
-                    ""id"": ""10fc5bab-f8ad-46af-80d1-7251e3857407"",
+                    ""id"": ""86424323-edd3-4e7e-a7ee-7b597807d6d2"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -151,9 +162,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""cfabf317-99e5-47d8-8f9b-e4c06a049438"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""name"": ""positive"",
+                    ""id"": ""b05d781a-242d-48a5-8035-c60446e518c4"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -162,9 +173,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""f7c5d85f-95f0-4037-8453-7fddb6194fce"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""name"": ""negative"",
+                    ""id"": ""24a2a32f-01a0-4c4f-b295-07b42faf9389"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
