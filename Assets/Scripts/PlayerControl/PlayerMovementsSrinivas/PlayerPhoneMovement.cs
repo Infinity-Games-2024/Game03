@@ -35,6 +35,25 @@ public class PlayerPhoneMovement : MonoBehaviour
 
         buttonJump.onClick.AddListener(ButtonPressed);
 
+        // Detect device type
+        // Detect device type
+        /*
+                #if UNITY_EDITOR || UNITY_STANDALONE
+                    m_DeviceType = "PC";
+                #elif UNITY_WEBGL
+                    // Check for WebGL platform
+                    if (SystemInfo.deviceType == DeviceType.Desktop)
+                    {
+                        m_DeviceType = "PC";
+                    }
+                    else
+                    {
+                        m_DeviceType = "Mobile";
+                    }
+                #else
+                    m_DeviceType = "Mobile";
+                #endif*/
+        // Use keyboard controls on WebGL (desktop)
 #if UNITY_WEBGL && !UNITY_EDITOR
     m_DeviceType = "PC";
 #else
@@ -56,7 +75,16 @@ public class PlayerPhoneMovement : MonoBehaviour
     }
     private void HandleMovement()
     {
-
+        //dirX = joystick.Horizontal*moveSpeed;
+        /*if (joystick.Horizontal >= 0.18f)
+        {
+            dirX = joystick.Horizontal * moveSpeed;
+        }
+        else if (joystick.Horizontal <= -0.18f)
+        {
+            dirX = joystick.Horizontal * moveSpeed;
+        }*/
+        //dirY = joystick.Vertical * moveSpeed;
         if (m_DeviceType == "PC")
         {
             dirX = Input.GetAxis("Horizontal") * moveSpeed;
@@ -72,7 +100,7 @@ public class PlayerPhoneMovement : MonoBehaviour
                 dirX = 0f;
             }
         }
-        rb.velocity = new Vector2(dirX * moveSpeed * Time.fixedDeltaTime, rb.velocity.y );
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
     }
 
     private void HandleJump()
@@ -82,7 +110,7 @@ public class PlayerPhoneMovement : MonoBehaviour
         {
 
             jumpSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x*Time.fixedDeltaTime, jumpForce );
+            rb.velocity = new Vector2(rb.velocity.x*Time.fixedDeltaTime, jumpForce);
             //isButtonPressed = false;
         }
     }
@@ -112,6 +140,7 @@ public class PlayerPhoneMovement : MonoBehaviour
             state = MovementState.running;
             sprite.flipX = true;
         }
+
 
         else
         {
