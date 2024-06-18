@@ -57,6 +57,28 @@
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddc7c9b4-5ec6-4e04-8eec-6e745bcc12fd",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cea440f9-8add-4095-9427-025348ca4efd",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -163,7 +185,7 @@
                 },
                 {
                     "name": "",
-                    "id": "8cdffb50-f74c-47d5-8248-2590684b9aa3",
+                    "id": "62c60a4d-0e57-4724-a180-2f791a8377a2",
                     "path": "",
                     "interactions": "",
                     "processors": "",

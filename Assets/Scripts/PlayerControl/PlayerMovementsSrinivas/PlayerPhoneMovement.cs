@@ -91,7 +91,7 @@ public class PlayerPhoneMovement : MonoBehaviour
         {
 
             jumpSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x*Time.fixedDeltaTime, jumpForce);
             //isButtonPressed = false;
         }
     }
