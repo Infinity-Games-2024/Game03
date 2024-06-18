@@ -100,7 +100,7 @@ public class PlayerPhoneMovement : MonoBehaviour
                 dirX = 0f;
             }
         }
-        rb.velocity = new Vector2(dirX * moveSpeed*Time.fixedDeltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
     }
 
     private void HandleJump()
@@ -110,13 +110,13 @@ public class PlayerPhoneMovement : MonoBehaviour
         {
 
             jumpSoundEffect.Play();
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x*Time.fixedDeltaTime, jumpForce);
             //isButtonPressed = false;
         }
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         HandleMovement();
         HandleJump();
