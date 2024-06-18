@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 9e56c1e3b287e1044a710b8242ccf71b
+=======
+guid: c97ab7b1d16b0b3468da8ae54b686372
+>>>>>>> parent of fc31256 (Revert "Organized Ken's Treasure Assets")
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
