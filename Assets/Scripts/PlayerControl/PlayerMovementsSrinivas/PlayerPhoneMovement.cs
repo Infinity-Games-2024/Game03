@@ -35,6 +35,25 @@ public class PlayerPhoneMovement : MonoBehaviour
 
         buttonJump.onClick.AddListener(ButtonPressed);
 
+        // Detect device type
+        // Detect device type
+        /*
+                #if UNITY_EDITOR || UNITY_STANDALONE
+                    m_DeviceType = "PC";
+                #elif UNITY_WEBGL
+                    // Check for WebGL platform
+                    if (SystemInfo.deviceType == DeviceType.Desktop)
+                    {
+                        m_DeviceType = "PC";
+                    }
+                    else
+                    {
+                        m_DeviceType = "Mobile";
+                    }
+                #else
+                    m_DeviceType = "Mobile";
+                #endif*/
+        // Use keyboard controls on WebGL (desktop)
 #if UNITY_WEBGL && !UNITY_EDITOR
     m_DeviceType = "PC";
 #else
@@ -81,7 +100,7 @@ public class PlayerPhoneMovement : MonoBehaviour
                 dirX = 0f;
             }
         }
-        rb.velocity = new Vector2(dirX * moveSpeed * Time.fixedDeltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
     }
 
     private void HandleJump()
@@ -97,7 +116,7 @@ public class PlayerPhoneMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         HandleMovement();
         HandleJump();

@@ -42,7 +42,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""id"": ""a1818d7e-b80f-40fd-81ef-d8eebcdb4b03"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 }
             ],
@@ -68,6 +68,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+<<<<<<< HEAD
                 },
                 {
                     ""name"": """",
@@ -101,6 +102,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+=======
+>>>>>>> parent of cb2fda2 (FixedUpdate())
                 }
             ]
         },
@@ -174,7 +177,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""1D Axis AD"",
-                    ""id"": ""86424323-edd3-4e7e-a7ee-7b597807d6d2"",
+                    ""id"": ""10fc5bab-f8ad-46af-80d1-7251e3857407"",
                     ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -184,9 +187,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""b05d781a-242d-48a5-8035-c60446e518c4"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""name"": ""negative"",
+                    ""id"": ""cfabf317-99e5-47d8-8f9b-e4c06a049438"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -195,9 +198,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""24a2a32f-01a0-4c4f-b295-07b42faf9389"",
-                    ""path"": ""<Keyboard>/a"",
+                    ""name"": ""positive"",
+                    ""id"": ""f7c5d85f-95f0-4037-8453-7fddb6194fce"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
