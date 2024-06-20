@@ -20,6 +20,7 @@ public class PlayerPhoneMovement : MonoBehaviour
     [SerializeField] private AudioSource jumpSoundEffect;
     [SerializeField] private float joystickThreshold = 0.18f;
 
+    //int numberOfJumps=0;
     private float dirX = 0f;
     string m_DeviceType;
     //private float dirY = 0f;
@@ -108,15 +109,17 @@ public class PlayerPhoneMovement : MonoBehaviour
         if ((Input.GetButtonDown("Jump") || isButtonPressed == true) && IsGrounded())//IsGrounded DoubleJump
         //if ((Input.GetButtonDown("Jump") || isButtonPressed == true))
         {
-
+          
             jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             //isButtonPressed = false;
+          
         }
     }
 
     // Update is called once per frame
-    void Update()
+    //void FixedUpdate()
+    void Update() //To enable Keyboard Control Jump
     {
         HandleMovement();
         HandleJump();
