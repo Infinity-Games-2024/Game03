@@ -1,25 +1,30 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    string m_DeviceType;
+    public Joystick joystick;// Joystick for movement
+    public Button buttonJump;// Button for jumping
+    public bool isButtonPressed;// Flag to check if jump button is pressed
     private Rigidbody2D rb;//short for rigidbody
-    private BoxCollider2D coll;
-    private SpriteRenderer sprite;
-    private Animator anim;
+    private BoxCollider2D coll;// Rigidbody component for physics
+    private SpriteRenderer sprite;// Collider component for ground detection
+    private Animator anim;// Sprite renderer for flipping character
     //public AudioSource audioPlayer;//Adding Sound Effect Part1, Not Working Later
-    
+
     [SerializeField] private LayerMask jumpableGround;
+    [SerializeField] private float moveSpeed = 3f;
+    [SerializeField] private float jumpForce = 17f;
+    [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private float joystickThreshold = 0.18f;
 
     private float dirX = 0f;
-    [SerializeField] private float moveSpeed = 7f;
-    [SerializeField] private float jumpForce = 8f;
-
+    string m_DeviceType;
+    //private float dirY = 0f;
     private enum MovementState { idle, running, jumping, falling, death }
-
-    [SerializeField] private AudioSource jumpSoundEffect;
 
     // Start is called before the first frame update
     private void Start()
@@ -28,76 +33,94 @@ public class PlayerMovement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-       
-}
+
+        buttonJump.onClick.AddListener(ButtonPressed);
+
+        // Detect device type
+
+        // Detect device type
+#if UNITY_EDITOR || UNITY_STANDALONE
+        m_DeviceType = "PC";
+#elif UNITY_WEBGL
+            // Check for WebGL platform
+            if (SystemInfo.deviceType == DeviceType.Desktop)
+            {
+                m_DeviceType = "PC";
+            }
+            else if(SystemInfo.deveiceType==DeviceType.Handheld)
+            {
+                m_DeviceType = "Mobile";
+            }
+#else
+            m_DeviceType = "Mobile";
+#endif
+
+    }
+
+    private void ButtonPressed()//Gemini
+    {
+        isButtonPressed = true;
+        //Gemini: isButtonPressed after a short time(optional)
+        StartCoroutine(ResetJumpPressAfterTime(0.1f));
+    }
+    private IEnumerator ResetJumpPressAfterTime(float time)//Gemini
+    {
+        yield return new WaitForSeconds(time);
+        isButtonPressed = false;
+    }
+    private void HandleMovement()
+    {
+        //dirX = joystick.Horizontal*moveSpeed;
+        /*if (joystick.Horizontal >= 0.18f)
+        {
+            dirX = joystick.Horizontal * moveSpeed;
+        }
+        else if (joystick.Horizontal <= -0.18f)
+        {
+            dirX = joystick.Horizontal * moveSpeed;
+        }*/
+//dirY = joystick.Vertical * moveSpeed;
+
+/*
+if (m_DeviceType == "PC")
+        {
+            dirX = Input.GetAxis("Horizontal") * moveSpeed;
+        }
+        else
+        {
+            if (Mathf.Abs(joystick.Horizontal) >= joystickThreshold)
+            {
+                dirX = joystick.Horizontal * moveSpeed; // Line 60: Modified to use joystick input for Mobile
+            }
+            else
+            {
+                dirX = 0f;
+            }
+        }
+        rb.velocity = new Vector2(dirX, rb.velocity.y); // Line 65: Modified to apply movement
+    }
+
+    private void HandleJump()
+    {
+        if ((Input.GetButtonDown("Jump") || isButtonPressed == true) && IsGrounded())//IsGrounded DoubleJump
+        //if ((Input.GetButtonDown("Jump") || isButtonPressed == true))
+        {
+
+            jumpSoundEffect.Play();
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            //isButtonPressed = false;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //Output the device type to the console window
-        //Debug.Log("Device type : " + m_DeviceType);
-
-        //Check if the device running this is a console
-        /*
-        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Console)
-        {
-            //Change the text of the label
-            m_DeviceType = "Console";
-        }
-        */
-        //Check if the device running this is a desktop
-        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Desktop)
-        {
-            print("Hey");
-            m_DeviceType = "Desktop";
-            dirX = Input.GetAxisRaw("Horizontal");
-
-            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
-
-            if (Input.GetButtonDown("Jump") && IsGrounded())
-            {
-                jumpSoundEffect.Play();
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            }
-
-            UpdateAnimationUpdate();
-        }
-
-        //Check if the device running this is a handheld
-        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Handheld)
-        {
-            m_DeviceType = "Handheld";
-            //Debug.Log("Hello") ;
-
-            UpdateAndriod();
-        }
-
-        /*
-        //Check if the device running this is unknown
-        if (UnityEngine.Device.SystemInfo.deviceType == DeviceType.Unknown)
-        {
-            m_DeviceType = "Unknown";
-        }
-        //print(m_DeviceType);
-        */
-
-       
+        HandleMovement();
+        HandleJump();
+        AnimationUpdate();
     }
 
-    //try to update on Andriod
-    private void UpdateAndriod()
-    {
-        if (Input.touchCount > 0)
-        {
-            Touch touch=Input.GetTouch(0);
-            Vector3 touchPosition = Camera.main.ScreenToWorldPoint(touch.position);
-            touchPosition.z = 0f;
-            transform.position = touchPosition;
-           
-        }
-    }
-
-    private void UpdateAnimationUpdate()
+    private void AnimationUpdate()
     {
         //print("Hello");
         //Debug.Log("Hello");
@@ -114,6 +137,8 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.running;
             sprite.flipX = true;
         }
+
+
         else
         {
             //anim.SetBool("running", false);
@@ -135,17 +160,6 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-
-    /*
-    //Adding Sound Effect Part2
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Num1")
-        {
-            audioPlayer.Play();
-        }
-    }
-    //Part2 ends here
-    */
-
 }
+
+*/
