@@ -55,12 +55,12 @@ public class PlayerPhoneMovement : MonoBehaviour
                     m_DeviceType = "Mobile";
                 #endif*/
         // Use keyboard controls on WebGL (desktop)
-#if UNITY_WEBGL && !UNITY_EDITOR
-    m_DeviceType = "PC";
-#else
-        m_DeviceType = "Mobile";
+//#if UNITY_WEBGL && !UNITY_EDITOR
+    //m_DeviceType = "PC";
+//#else
+        //m_DeviceType = "Mobile";
         // Use joystick and button controls on mobile or editor
-#endif
+//#endif
     }
 
     private void ButtonPressed()//Gemini
