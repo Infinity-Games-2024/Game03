@@ -20,13 +20,13 @@ public class Finish : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //if (collision.gameObject.CompareTag("Player")) 
-        if(collision.gameObject.name=="Player" && !levelCompleted)
+        if(collision.gameObject.name== "TitanPlayer" && !levelCompleted)
         {
             UnlockNewLevel();//added Unlock Level Map
             //ResetPlayerPrefs();//Reset stored PlayerPrefs Level Data
             finishSound.Play();
             levelCompleted = true;
-            Invoke("CompleteLevel", 3.5f); // add 3.5s during level transition
+            Invoke("CompleteLevel", 3.2f); // add 2.8s during level transition
             //CompleteLevel();
         }
     }

@@ -19,6 +19,7 @@ public class GDTitanPlayerMovement : MonoBehaviour
 
     public Rigidbody2D playerRB;
     public Animator animator;
+    [SerializeField] private AudioSource jumpSoundEffect;
 
     // Start is called before the first frame update
     private void Awake()
@@ -57,10 +58,12 @@ public class GDTitanPlayerMovement : MonoBehaviour
 
     void Jump()
     {
+        //
         if (isGrounded)
         {
             numberOfJumps = 0;
             playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+            jumpSoundEffect.Play();
             numberOfJumps++;
         }
         else
@@ -68,6 +71,7 @@ public class GDTitanPlayerMovement : MonoBehaviour
             if (numberOfJumps == 1)
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
+                jumpSoundEffect.Play();
                 numberOfJumps++;
             }
         }

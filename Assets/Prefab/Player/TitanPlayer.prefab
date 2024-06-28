@@ -66,7 +66,7 @@ Transform:
   m_GameObject: {fileID: 8548577278361447467}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.49, y: 2, z: 0}
+  m_LocalPosition: {x: -3.2759886, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -233,7 +233,7 @@ MonoBehaviour:
   cherriesText: {fileID: 0}
   levelText: {fileID: 0}
   subtitleText: {fileID: 0}
-  collectionSoundEffect: {fileID: 3578267027035531325}
+  collectionSoundEffect: {fileID: 1240147790381664508}
 --- !u!114 &2987336077033758962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,3 +555,4 @@ MonoBehaviour:
     m_Bits: 64
   playerRB: {fileID: 4051745243892242909}
   animator: {fileID: 6120611290193408376}
+  jumpSoundEffect: {fileID: 3578267027035531325}

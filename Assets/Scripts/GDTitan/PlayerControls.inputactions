@@ -115,8 +115,8 @@
                 },
                 {
                     "name": "",
-                    "id": "8c4fc9a3-583c-4bf1-9b1b-51bb2fdd8234",
-                    "path": "<Keyboard>/w",
+                    "id": "4ffd67f9-03ca-4d0c-827d-5513431bb0ad",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -126,8 +126,8 @@
                 },
                 {
                     "name": "",
-                    "id": "2a746cb1-247f-4e5f-b91e-5e9a71a88242",
-                    "path": "<Keyboard>/upArrow",
+                    "id": "66f5dd03-68aa-43a7-9166-ace30def3c37",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
