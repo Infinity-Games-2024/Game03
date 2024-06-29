@@ -15,6 +15,8 @@ public class ItemCollector : MonoBehaviour
     [SerializeField] private Text subtitleText; //added
     [SerializeField] private AudioSource collectionSoundEffect;
 
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         levelText.text = "" + (SceneManager.GetActiveScene().buildIndex - 1) + "/8";
@@ -82,5 +84,7 @@ public class ItemCollector : MonoBehaviour
 
         // Clear subtitle text
         subtitleText.text = "";
+
+        // ChatGPT Assuming the canvas elements have these tags set in the Inspector 
     }
 }

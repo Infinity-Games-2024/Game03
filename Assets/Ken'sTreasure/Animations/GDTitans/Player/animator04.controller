@@ -22,7 +22,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 888481a7941ba8c4fb8e12c1659b1748, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2219b244037bfd444914976fa2874b3d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -135,7 +135,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Run03
+  m_Name: Player_Running
   m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
@@ -150,7 +150,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c302494388f01f7479580e15ecfa0b6b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9b0d66eeb93a36a42ab58ae563883bcc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -223,7 +223,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Titan
+  m_Name: animator04
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: state
@@ -336,7 +336,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1198aebea6c3c904e85da4ff9b34fca4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2df7bfa00202fb7469ce3658de0c5d62, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -390,7 +390,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 888481a7941ba8c4fb8e12c1659b1748, type: 2}
+  m_Motion: {fileID: 7400000, guid: 2219b244037bfd444914976fa2874b3d, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

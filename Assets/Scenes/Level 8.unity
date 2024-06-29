@@ -4472,8 +4472,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7133018747128036616, guid: 5f6fd66ed22b82144ba472891d084d90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1249260842}
   m_SourcePrefab: {fileID: 100100000, guid: 5f6fd66ed22b82144ba472891d084d90, type: 3}
+--- !u!1 &1249260841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7133018747128036616, guid: 5f6fd66ed22b82144ba472891d084d90, type: 3}
+  m_PrefabInstance: {fileID: 1249260840}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1249260842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249260841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f1c9d6b99025045ae81897defb9622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1249665339
 GameObject:
   m_ObjectHideFlags: 0
@@ -7194,10 +7214,14 @@ PrefabInstance:
     - target: {fileID: 1228537951615175592, guid: 51f70857862372544b8a1bb06d2d115b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1249260842}
     - target: {fileID: 1228537951615175592, guid: 51f70857862372544b8a1bb06d2d115b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoHome
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228537951615175592, guid: 51f70857862372544b8a1bb06d2d115b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CameraController2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1496724431490547870, guid: 51f70857862372544b8a1bb06d2d115b, type: 3}
       propertyPath: m_Pivot.x
