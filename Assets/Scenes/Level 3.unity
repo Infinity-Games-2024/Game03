@@ -997,6 +997,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 658443606431044488, guid: 891b428a334706747a3a3afde048e0b0, type: 3}
+      propertyPath: speed
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 2987336077033758962, guid: 891b428a334706747a3a3afde048e0b0, type: 3}
       propertyPath: deathSoundEffect
       value: 
