@@ -29,6 +29,15 @@ public class PlayerCollision : MonoBehaviour
             PlayerManager.isGameOver = true;
             //gameObject.SetActive(false);//GDTitan: Player Disappears
         }
+        /*
+        if (collision.transform.tag == "Finish")
+        {
+            //AudioManager.instance.Play("GameWin");
+            //Finish.finishSound.Play();
+            PlayerManager.isGameWin = true;
+            //Finish.levelCompleted = true;
+            Invoke("CompleteLevel", 3.2f);
+        }*/
     }
 
     private void Die()

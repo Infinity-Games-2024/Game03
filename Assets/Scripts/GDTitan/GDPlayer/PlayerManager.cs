@@ -6,6 +6,7 @@ using Cinemachine;
 public class PlayerManager : MonoBehaviour
 {
     public static bool isGameOver;
+    public static bool isGameWin;
 
     public static Vector2 lastCheckPointPos = new Vector2(-3, 0);
 
@@ -14,6 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     public CinemachineVirtualCamera VCam;
     public GameObject gameOverScreen;
+    public GameObject gameWinScreen;
 
     //public GameObject[] playerPrefabs;
     int characterIndex;
@@ -22,6 +24,7 @@ public class PlayerManager : MonoBehaviour
     {
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins",0);//Store Date after exit, 0 is the default value
         isGameOver = false;
+        isGameWin = false;
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
         //Below 4 lines were commented in 28th June Friday
         //characterIndex = PlayerPrefs.GetInt("SelectedCharacter",0);
@@ -40,6 +43,11 @@ public class PlayerManager : MonoBehaviour
         if(isGameOver)
         {
             gameOverScreen.SetActive(true);
+        }
+        if (isGameWin)
+        {
+            lastCheckPointPos = new Vector2(0, 0);
+            gameWinScreen.SetActive(true);
         }
     }
 

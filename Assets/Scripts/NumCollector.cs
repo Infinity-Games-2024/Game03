@@ -13,7 +13,12 @@ public class NumCollector : MonoBehaviour
         {
             NumSoundEffect.Play();
             //numSubtitle.text = "uno";
-            Destroy(gameObject,2);//Destroy Num1 itself when player touches it
+            //Destroy(gameObject,2);//Destroy Num1 itself when player touches it
+
+            PlayerManager.numberOfCoins++;
+            //AudioManager.instance.Play("Coins");
+            PlayerPrefs.SetInt("NumberOfCoins", PlayerManager.numberOfCoins);
+            Destroy(gameObject);
         }
     }
 }

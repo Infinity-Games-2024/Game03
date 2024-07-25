@@ -8,10 +8,10 @@ public class Finish : MonoBehaviour
 {
 
     //[SerializeField] private Text subtitleText;//SubtitleA
-    private AudioSource finishSound;
+    private AudioSource finishSound;//Private before
     // Start is called before the first frame update
 
-    private bool levelCompleted=false; 
+    private bool levelCompleted=false; //before static
     private void Start()
     {
         finishSound = GetComponent<AudioSource>();
@@ -25,13 +25,16 @@ public class Finish : MonoBehaviour
             UnlockNewLevel();//added Unlock Level Map
             //ResetPlayerPrefs();//Reset stored PlayerPrefs Level Data
             finishSound.Play();
+            AudioManager.instance.Play("GameWin");
+            PlayerManager.isGameWin = true;
             levelCompleted = true;
             Invoke("CompleteLevel", 3.2f); // add 2.8s during level transition
             //CompleteLevel();
         }
+
     }
 
-    private void CompleteLevel()
+    private void CompleteLevel()//Private Before
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

@@ -63,8 +63,8 @@ public class GDTitanPlayerMovement : MonoBehaviour
         {
             numberOfJumps = 0;
             playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-            //jumpSoundEffect.Play();
-            AudioManager.instance.Play("FirstJump");
+            jumpSoundEffect.Play();
+            //AudioManager.instance.Play("FirstJump");
             numberOfJumps++;
         }
         else
@@ -72,8 +72,8 @@ public class GDTitanPlayerMovement : MonoBehaviour
             if (numberOfJumps == 1)
             {
                 playerRB.velocity = new Vector2(playerRB.velocity.x, jumpForce);
-                //jumpSoundEffect.Play();
-                AudioManager.instance.Play("SecondJump");
+                jumpSoundEffect.Play();
+                //AudioManager.instance.Play("SecondJump");
                 numberOfJumps++;
             }
         }
