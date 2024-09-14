@@ -24,7 +24,7 @@ public class ItemCollector : MonoBehaviour
         if (collectibleTags.Contains(collision.gameObject.tag))
         {
             collectionSoundEffect.Play();
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
             cherries++;
             cherriesText.text = "Score: " + cherries; // Updated text format
 
@@ -44,35 +44,35 @@ public class ItemCollector : MonoBehaviour
         switch (collectedNumber)
         {
             case "Num1":
-                subtitleText.text = "one";
+                subtitleText.text = "odin";
                 break;
             // ... other cases for subtitle translations
             case "Num2":
-                subtitleText.text = "two";
+                subtitleText.text = "dva";
                 break;
             case "Num3":
-                subtitleText.text = "three";
+                subtitleText.text = "tri";
                 break;
             case "Num4":
-                subtitleText.text = "four";
+                subtitleText.text = "chetyre";
                 break;
             case "Num5":
-                subtitleText.text = "five";
+                subtitleText.text = "pyat'";
                 break;
             case "Num6":
-                subtitleText.text = "six";
+                subtitleText.text = "shest'";
                 break;
             case "Num7":
-                subtitleText.text = "seven";
+                subtitleText.text = "sem'";
                 break;
             case "Num8":
-                subtitleText.text = "eight";
+                subtitleText.text = "vosem'";
                 break;
             case "Num9":
-                subtitleText.text = "nine";
+                subtitleText.text = "devyat'";
                 break;
             case "Num10":
-                subtitleText.text = "ten";
+                subtitleText.text = "desyat'";
                 break;
             default:
                 subtitleText.text = "";
