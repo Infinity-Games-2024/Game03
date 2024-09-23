@@ -7,7 +7,7 @@ public class CameraController2 : MonoBehaviour
 {
     public void GoHome()
     {
-        SceneManager.LoadSceneAsync("MainMenu");
+        SceneManager.LoadSceneAsync("Menu");
     }
 
 }

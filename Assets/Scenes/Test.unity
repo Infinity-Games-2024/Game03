@@ -721,6 +721,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitanPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1624465015942308902, guid: 88e5ab34e548cf34ab85c53af3128391, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2347143637790579218, guid: 88e5ab34e548cf34ab85c53af3128391, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2335,10 +2339,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1594088828}
     m_Modifications:
-    - target: {fileID: 1228537951615175592, guid: 51f70857862372544b8a1bb06d2d115b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1228537951615175592, guid: 51f70857862372544b8a1bb06d2d115b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -279530,16 +279530,16 @@ PrefabInstance:
       objectReference: {fileID: 1279608826586105445}
     - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
       propertyPath: playerPrefabs.Array.size
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
       propertyPath: playerPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 688930254025292116, guid: a9356fe18fe54df41aeb6ffa3f674670, type: 3}
+      objectReference: {fileID: 8827740061558930081, guid: c32d073537228d04f977278cabbf06ba, type: 3}
     - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
       propertyPath: playerPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 8827740061558930081, guid: c32d073537228d04f977278cabbf06ba, type: 3}
+      objectReference: {fileID: 688930254025292116, guid: a9356fe18fe54df41aeb6ffa3f674670, type: 3}
     - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
       propertyPath: playerPrefabs.Array.data[2]
       value: 
