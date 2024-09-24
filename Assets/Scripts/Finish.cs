@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class Finish : MonoBehaviour
 {
 
@@ -19,8 +20,9 @@ public class Finish : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.gameObject.CompareTag("Player")) 
-        if(collision.gameObject.name== "TitanPlayer" && !levelCompleted)
+        //if (collision.gameObject.CompareTag("TitanPlayer02")&& !levelCompleted) 
+        bool win = ((collision.gameObject.name == "TitanPlayer01(Clone)")||(collision.gameObject.name == "TitanPlayer02(Clone)")||(collision.gameObject.name == "TitanPlayer03(Clone)")); //anyone of the 3 characters win through the gate, it will pass to the next level
+        if(win && !levelCompleted)
         {
             UnlockNewLevel();//added Unlock Level Map
             //ResetPlayerPrefs();//Reset stored PlayerPrefs Level Data

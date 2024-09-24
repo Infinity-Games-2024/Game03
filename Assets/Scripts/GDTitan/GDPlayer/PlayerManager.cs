@@ -17,21 +17,23 @@ public class PlayerManager : MonoBehaviour
     public GameObject gameOverScreen;
     public GameObject gameWinScreen;
 
-    //public GameObject[] playerPrefabs;
+    public GameObject[] playerPrefabs;
     int characterIndex;
 
     private void Awake()
     {
+        //Below 4 lines were commented in 28th June Friday
+        characterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
+        //Instantiate(playerPrefabs[characterIndex], lastCheckPointPos, Quaternion.identity);
+        GameObject player = Instantiate(playerPrefabs[characterIndex],lastCheckPointPos, Quaternion.identity);
+        VCam.m_Follow = player.transform;
+        //isGameOver = false;
+
         numberOfCoins = PlayerPrefs.GetInt("NumberOfCoins",0);//Store Date after exit, 0 is the default value
         isGameOver = false;
         isGameWin = false;
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
-        //Below 4 lines were commented in 28th June Friday
-        //characterIndex = PlayerPrefs.GetInt("SelectedCharacter",0);
-        //GameObject player = Instantiate(playerPrefabs[characterIndex],lastCheckPointPos, Quaternion.identity);
-     
-        //VCam.m_Follow = player.transform;
-        //isGameOver = false;
+        
     }
 
     // Update is called once per frame
