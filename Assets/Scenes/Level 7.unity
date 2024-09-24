@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 1505497714}
     - target: {fileID: 5629388120425987225, guid: 5f6fd66ed22b82144ba472891d084d90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.802637
+      value: -26.820415
       objectReference: {fileID: 0}
     - target: {fileID: 6228986660989014368, guid: 5f6fd66ed22b82144ba472891d084d90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8484219407744170961, guid: 5f6fd66ed22b82144ba472891d084d90, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.802637
+      value: -26.820415
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -210,6 +210,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96f1c9d6b99025045ae81897defb9622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &14982095 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3324195567611369961, guid: 5f6fd66ed22b82144ba472891d084d90, type: 3}
+  m_PrefabInstance: {fileID: 14982092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &80757892
@@ -4245,6 +4256,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TitanPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 8548577278361447467, guid: 891b428a334706747a3a3afde048e0b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4945,6 +4960,10 @@ PrefabInstance:
       value: PlayerManager
       objectReference: {fileID: 0}
     - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
+      propertyPath: VCam
+      value: 
+      objectReference: {fileID: 14982095}
+    - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
       propertyPath: coinsText
       value: 
       objectReference: {fileID: 674079314}
@@ -4956,6 +4975,22 @@ PrefabInstance:
       propertyPath: gameOverScreen
       value: 
       objectReference: {fileID: 739280595}
+    - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
+      propertyPath: playerPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
+      propertyPath: playerPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8827740061558930081, guid: a9356fe18fe54df41aeb6ffa3f674670, type: 3}
+    - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
+      propertyPath: playerPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 688930254025292116, guid: 88e5ab34e548cf34ab85c53af3128391, type: 3}
+    - target: {fileID: 3034216427020773502, guid: a7a84c694b55b4444a304ab77ca8d0fc, type: 3}
+      propertyPath: playerPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1624465015942308902, guid: c32d073537228d04f977278cabbf06ba, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
