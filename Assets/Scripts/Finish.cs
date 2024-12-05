@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Finish : MonoBehaviour
 {
 
+    //[SerializeField] private Text subtitleText;//SubtitleA
     private AudioSource finishSound;
     // Start is called before the first frame update
 
@@ -20,6 +22,7 @@ public class Finish : MonoBehaviour
         //if (collision.gameObject.CompareTag("Player")) 
         if(collision.gameObject.name=="Player" && !levelCompleted)
         {
+            //subtitleText.text = "uno";//SubtitleB
             finishSound.Play();
             levelCompleted = true;
             Invoke("CompleteLevel", 3f); // add 2s during level transition

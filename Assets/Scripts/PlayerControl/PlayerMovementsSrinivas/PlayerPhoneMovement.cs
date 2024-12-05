@@ -8,11 +8,11 @@ public class PlayerPhoneMovement : MonoBehaviour
     public Joystick joystick;//Brackevs Srinivas, adding Joystick
     public Button buttonJump;
     public bool isButtonPressed;
-    string m_DeviceType;
     private Rigidbody2D rb;//short for rigidbody
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
     private Animator anim;
+    string m_DeviceType;
     //public AudioSource audioPlayer;//Adding Sound Effect Part1, Not Working Later
 
     [SerializeField] private LayerMask jumpableGround;
@@ -21,10 +21,9 @@ public class PlayerPhoneMovement : MonoBehaviour
     private float dirY = 0f;
     [SerializeField] private float moveSpeed = 3f;
     [SerializeField] private float jumpForce = 17f;
+    [SerializeField] private AudioSource jumpSoundEffect;
 
     private enum MovementState { idle, running, jumping, falling, death }
-
-    [SerializeField] private AudioSource jumpSoundEffect;
 
     // Start is called before the first frame update
     private void Start()
@@ -42,7 +41,7 @@ public class PlayerPhoneMovement : MonoBehaviour
         isButtonPressed = true;
 
         //Gemini: isButtonPressed after a short time(optional)
-        StartCoroutine(ResetJumpPressAfterTime(0.1f));
+        StartCoroutine(ResetJumpPressAfterTime(0.01f));
     }
     IEnumerator ResetJumpPressAfterTime(float time)//Gemini
     {
@@ -55,28 +54,35 @@ public class PlayerPhoneMovement : MonoBehaviour
     {
 
         //dirX = joystick.Horizontal*moveSpeed;
-        if(joystick.Horizontal >= 0.18f)
+        if (joystick.Horizontal >= 0.18f)
         {
             dirX = joystick.Horizontal * moveSpeed;
         }
         else if (joystick.Horizontal <= -0.18f)
         {
             dirX = joystick.Horizontal * moveSpeed;
-        }else
+        }
+        else
         {
             dirX = 0f;
         }
 
-        //dirY = joystick.Vertical*moveSpeed;
+
+        //dirY = joystick.Vertical * moveSpeed;
+
+
 
         rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
 
-        if ((Input.GetButtonDown("Jump") || isButtonPressed==true) && IsGrounded())
+        if ((Input.GetButtonDown("Jump") || isButtonPressed==true) && IsGrounded())//IsGrounded DoubleJump
+        //if ((Input.GetButtonDown("Jump") || isButtonPressed == true))
         {
+
             jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             //isButtonPressed = false;
         }
+
         AnimationUpdate();
     }
 
@@ -97,6 +103,8 @@ public class PlayerPhoneMovement : MonoBehaviour
             state = MovementState.running;
             sprite.flipX = true;
         }
+
+
         else
         {
             //anim.SetBool("running", false);
@@ -118,5 +126,4 @@ public class PlayerPhoneMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-
 }
